@@ -1,0 +1,106 @@
+body{
+    background: #2A7AE4;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+main{
+    display: flex;
+    gap: 5em;
+    flex-wrap: wrap;
+    padding: 2em 0 0 2em;
+}
+.encriptador-aluralogo{
+    width: 8em;
+}
+.encriptador-aluralogo img{
+    width: 8em;
+}
+.encriptador-input{
+    background: white;
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    width: 50%;
+    height: 80vh;
+}
+.encriptador-input textarea{
+    outline: none;
+    height:70%; 
+    /* font-size: 2em; */
+}
+
+.encriptador-input .btn-group{
+    display:flex;
+    width: 100%;
+    justify-content:space-between;
+}
+.btn-group input[type="button"]{
+    display: block;
+    width: 45%;
+    padding: 1.2em 0;
+}
+textarea{
+    background:red;
+    border: none;
+    width: auto;
+    padding: 1em 1em;
+    resize: none;
+}
+.encriptador-output{
+    width: 30%;
+    position: relative;
+    border-radius: 20px;
+    background: white;
+    padding: 2em 0;
+    /* box-shadow:  20px -20px 60px #2468c2, */
+             /* -20px 20px 60px #308cff; */
+}
+.encriptador-output div{
+    position:absolute;
+    width: 100%;
+    height: 80%;
+}
+.result{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.result textarea{
+    width: 90%;
+    height: 80%;
+    /* font-size: 1.2em; */
+}
+.result input[type="button"]{
+    width: 80%;
+    padding: 1.2em 0;
+}
+input[type="button"]{
+    border-radius: 20px;
+}
+.empty{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:768px){
+    main{
+        padding: 1em 1em;
+    }
+    main section{
+        width: 100%;
+        height: fit-content;
+    }
+    .encriptador-input{
+        margin: 0;
+        width:100%;
+        height: 80vh;
+    }
+    .encriptador-output{
+        width: 100%;
+        height: 80vh;
+    }
+}
