@@ -29,7 +29,6 @@ function decrypt(text) {
 }
 
 function inputValido() {
-    input.value
     if (input.value == "" || Array.from(input.value).some((e) => {return e < "a" && e !=" " || e > "z";})) {
         empty.children[1].innerHTML = "Por favor ingresa texto valido";
         empty.children[1].style.color = "red"
