@@ -5,8 +5,11 @@ const btncopiar = document.querySelector("#btncopy");
 // Textareas
 const input = document.querySelector("#user-input");
 const output = document.querySelector("#user-output");
-// results
+// Results
 const empty = document.querySelector(".empty");
+// Titulo de validación
+const info = document.querySelector(".btn-group").children[0];
+
 
 function encrypt(text) {
     let resultado = "";
@@ -26,30 +29,38 @@ function decrypt(text) {
 }
 
 function inputValido() {
-    if (input.value == "") {
-        empty.children[0].innerHTML = "Por favor ingresa texto";
-        empty.children[0].style.color = "red"
+    input.value
+    if (input.value == "" || Array.from(input.value).some((e) => {return e < "a" && e !=" " || e > "z";})) {
+        empty.children[1].innerHTML = "Por favor ingresa texto valido";
+        empty.children[1].style.color = "red"
+        info.style.color = "red"
+        input.focus();
         return false;
     }
-    else return true;
+    else {
+        info.style.color = "white"
+        return true;
+    }
 }
 
 btnencriptar.addEventListener("click", (e) => {
     if (inputValido()) {
         output.value = encrypt(input.value);
-        empty.classList.add("invisible")
+        empty.classList.add("invisible");
     }
 })
 
 btndesencriptar.addEventListener("click", (e) => {
     if (inputValido()) {
         output.value = decrypt(input.value);
-        empty.classList.add("invisible")
+        empty.classList.add("invisible");
     }
 })
 
 btncopiar.addEventListener("click", (e) => {
     navigator.clipboard.writeText(output.value);
-    alert("Copiaste el texto: "+output.value)
+    alert("Copiaste el texto: " + output.value);
+    input.value="";
+    input.focus();
 })
 
